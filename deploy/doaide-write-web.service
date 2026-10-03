@@ -1,0 +1,16 @@
+[Unit]
+Description=DoAide Write Web (write.doaide.com)
+After=network.target
+
+[Service]
+Type=simple
+User=deployer
+Group=deployer
+WorkingDirectory=/opt/doaide-write
+ExecStart=/usr/bin/npx serve dist -l tcp://172.18.0.1:3057 -s
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

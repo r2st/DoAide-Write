@@ -1,0 +1,102 @@
+/* GitHub Theme */
+.preview-theme-github {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+}
+.dark .preview-theme-github {
+  color: #e5e7eb;
+}
+.preview-theme-github h1,
+.preview-theme-github h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e5e7eb;
+}
+.dark .preview-theme-github h1,
+.dark .preview-theme-github h2 {
+  border-bottom-color: #374151;
+}
+
+/* Academic Theme */
+.preview-theme-academic {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #1a1a1a;
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.dark .preview-theme-academic {
+  color: #d1d5db;
+}
+.preview-theme-academic h1,
+.preview-theme-academic h2,
+.preview-theme-academic h3 {
+  font-weight: 700;
+  margin-top: 2em;
+}
+.preview-theme-academic blockquote {
+  border-left: 3px solid #6b7280;
+  font-style: italic;
+}
+.preview-theme-academic p {
+  text-align: justify;
+}
+
+/* Minimal Theme */
+.preview-theme-minimal {
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  color: #374151;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.dark .preview-theme-minimal {
+  color: #d1d5db;
+}
+.preview-theme-minimal h1 {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+.preview-theme-minimal h2 {
+  font-size: 1.35em;
+  font-weight: 600;
+}
+.preview-theme-minimal hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 2em 0;
+}
+.dark .preview-theme-minimal hr {
+  background: #374151;
+}
+
+/* Night Theme */
+.preview-theme-night {
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  color: #c9d1d9;
+  line-height: 1.6;
+  background: #0d1117;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.preview-theme-night h1,
+.preview-theme-night h2,
+.preview-theme-night h3 {
+  color: #f0f6fc;
+  border-bottom-color: #21262d;
+}
+.preview-theme-night a {
+  color: #58a6ff;
+}
+.preview-theme-night code {
+  background: #161b22;
+  color: #c9d1d9;
+}
+.preview-theme-night blockquote {
+  border-left-color: #30363d;
+  color: #8b949e;
+}
+.preview-theme-night pre {
+  background: #161b22 !important;
+}
