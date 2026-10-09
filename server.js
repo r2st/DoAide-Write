@@ -5,7 +5,7 @@ import { join } from 'path'
 const PORT = parseInt(process.env.PORT || '3057', 10)
 const HOST = process.env.HOST || '172.18.0.1'
 const GEMINI_KEY = process.env.GEMINI_API_KEY || ''
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash'
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.8-flash'
 
 const DIST = join(import.meta.dirname, 'dist')
 const indexHtml = readFileSync(join(DIST, 'index.html'), 'utf-8')
