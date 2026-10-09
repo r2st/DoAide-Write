@@ -1,0 +1,81 @@
+export const tools = [
+  {
+    slug: 'article-outline-generator',
+    name: 'AI Article Outline Generator',
+    shortName: 'Outline Generator',
+    description: 'Generate a structured article outline from any topic. Get sections, subsections, and key talking points in seconds.',
+    metaDescription: 'Free AI article outline generator. Enter a topic and get a structured outline with sections, subsections, and key points. No login required.',
+    inputLabel: 'Enter your article topic or title',
+    inputPlaceholder: 'e.g., "The Future of Remote Work in 2026" or "How to Start a Vegetable Garden"',
+    buttonLabel: 'Generate Outline',
+    resultLabel: 'Your Article Outline',
+    maxLength: 500,
+    isAI: true,
+    buildPrompt: (input) =>
+      `You are an expert content strategist. Generate a detailed, well-structured article outline for the following topic:\n\n"${input}"\n\nProvide:\n1. A compelling title\n2. An introduction section with key hook points\n3. 4-6 main sections with 2-3 subsections each\n4. Key talking points or bullet items under each subsection\n5. A conclusion section\n\nFormat the outline using Markdown with proper heading levels (##, ###) and bullet points. Make it actionable and comprehensive.`,
+  },
+  {
+    slug: 'paragraph-rewriter',
+    name: 'AI Paragraph Rewriter',
+    shortName: 'Paragraph Rewriter',
+    description: 'Rewrite any paragraph in a different tone or style. Choose from professional, casual, academic, or simplified.',
+    metaDescription: 'Free AI paragraph rewriter tool. Paste your text and rewrite it in professional, casual, academic, or simplified style. No login required.',
+    inputLabel: 'Paste the paragraph you want to rewrite',
+    inputPlaceholder: 'Paste your paragraph here...',
+    buttonLabel: 'Rewrite Paragraph',
+    resultLabel: 'Rewritten Paragraph',
+    maxLength: 3000,
+    isAI: true,
+    hasToneSelect: true,
+    tones: ['Professional', 'Casual', 'Academic', 'Simplified', 'Persuasive'],
+    buildPrompt: (input, tone = 'Professional') =>
+      `Rewrite the following paragraph in a ${tone.toLowerCase()} tone. Keep the core meaning but improve clarity and flow. Only output the rewritten paragraph, nothing else.\n\nOriginal:\n"${input}"`,
+  },
+  {
+    slug: 'grammar-checker',
+    name: 'AI Grammar Checker',
+    shortName: 'Grammar Checker',
+    description: 'Check your text for grammar, spelling, and punctuation errors. Get detailed corrections with explanations.',
+    metaDescription: 'Free AI grammar checker. Paste your text to find grammar, spelling, and punctuation errors with corrections. No login required.',
+    inputLabel: 'Paste your text to check',
+    inputPlaceholder: 'Paste your text here to check for grammar errors...',
+    buttonLabel: 'Check Grammar',
+    resultLabel: 'Grammar Report',
+    maxLength: 5000,
+    isAI: true,
+    buildPrompt: (input) =>
+      `You are a professional editor. Analyze the following text for grammar, spelling, punctuation, and style issues.\n\nFor each issue found:\n1. Quote the problematic text\n2. Explain the error\n3. Provide the corrected version\n\nAfter listing all issues, provide the fully corrected text.\n\nFormat your response in Markdown with clear sections. If no errors are found, say so.\n\nText to check:\n"${input}"`,
+  },
+  {
+    slug: 'headline-analyzer',
+    name: 'AI Headline Analyzer',
+    shortName: 'Headline Analyzer',
+    description: 'Analyze your headline for emotional impact, clarity, SEO potential, and engagement. Get a score and actionable suggestions.',
+    metaDescription: 'Free AI headline analyzer. Score your headline for emotional impact, SEO value, and click-through potential. No login required.',
+    inputLabel: 'Enter your headline to analyze',
+    inputPlaceholder: 'e.g., "10 Proven Strategies to Double Your Productivity"',
+    buttonLabel: 'Analyze Headline',
+    resultLabel: 'Headline Analysis',
+    maxLength: 300,
+    isAI: true,
+    buildPrompt: (input) =>
+      `You are a headline optimization expert. Analyze this headline:\n\n"${input}"\n\nProvide:\n1. **Overall Score**: X/100\n2. **Emotional Impact**: Rate and explain (power words, emotional triggers)\n3. **Clarity**: Is it clear what the content is about?\n4. **SEO Potential**: Keyword strength and search intent\n5. **Click-Through Potential**: Would people click on this?\n6. **Length Analysis**: Character count assessment (ideal: 50-60 chars)\n7. **Suggestions**: 3 improved headline alternatives\n\nFormat your response in Markdown.`,
+  },
+  {
+    slug: 'readability-scorer',
+    name: 'Readability Scorer',
+    shortName: 'Readability Scorer',
+    description: 'Measure your text readability with Flesch-Kincaid, Gunning Fog, and other metrics. Instant client-side analysis.',
+    metaDescription: 'Free readability scorer. Analyze your text with Flesch-Kincaid, Gunning Fog, Coleman-Liau, and more. Instant results, no login required.',
+    inputLabel: 'Paste your text to analyze',
+    inputPlaceholder: 'Paste your text here to analyze readability...',
+    buttonLabel: 'Analyze Readability',
+    resultLabel: 'Readability Report',
+    maxLength: 10000,
+    isAI: false,
+  },
+]
+
+export function getToolBySlug(slug) {
+  return tools.find(t => t.slug === slug)
+}
