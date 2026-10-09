@@ -86,7 +86,7 @@ app.post('/api/ai', async (req, res) => {
 
 app.use(express.static(DIST, { maxAge: '1d', index: false }))
 
-app.get('*', (_req, res) => {
+app.get('/{*path}', (_req, res) => {
   res.setHeader('Content-Type', 'text/html')
   res.send(indexHtml)
 })
